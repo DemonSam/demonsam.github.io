@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Bootstrap one</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+</head>
+<style>
+    .c-bg{
+        background-color: #f1f0f0;
+        border:1px solid #adadad;
+        height:50px;
+        line-height:50px;
+        text-align: center;
+    }
+    .w200-h50{
+        border:1px solid #adadad;
+        width:200px;
+        height:50px;
+        line-height:50px;
+        text-align: center;
+        background-color: #f1f0f0;
+    }
+    .p0{
+        padding:0;
+    }
+    .navbar-brand>img{height: 50px}
+    .carousel-inner img{
+        margin:0 auto;
+    }
+</style>
+<body>
+    <!--响应式导航-->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="padding: 0"  href="javascript:;"><img src="logo/logo.png" alt=""></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="javascript:;">首页 <span class="glyphicon glyphicon-home"></span></a></li>
+                    <li><a href="javascript:;">咨询 <span class="glyphicon glyphicon-list"></span></a></li>
+                    <li><a href="javascript:;">关于 <span class="glyphicon glyphicon-question-sign"></span></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!--轮播图-->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin: 50px auto 0 auto">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active"><img src="../galleryPage/images/1-large.jpg" alt=""></div>
+            <div class="item"><img src="../galleryPage/images/2-large.jpg" alt=""></div>
+            <div class="item"><img src="../galleryPage/images/3-large.jpg" alt=""></div>
+        </div>
+        <a href="#myCarousel" class="carousel-control left" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="#myCarousel" class="carousel-control right" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+    <br>
+    <!--表格-->
+    <table class="table table-bordered table-hover">
+        <tr class="info">
+            <th>李四</th>
+            <th>占三</th>
+            <th>轩逸</th>
+        </tr>
+        <tr class="active">
+            <td>李四</td>
+            <td>占三</td>
+            <td>轩逸</td>
+        </tr>
+        <tr class="success">
+            <td>李四</td>
+            <td>占三</td>
+            <td>轩逸</td>
+        </tr>
+        <tr class="warning">
+            <td>李四</td>
+            <td>占三</td>
+            <td>轩逸</td>
+        </tr>
+        <tr class="danger">
+            <td>李四</td>
+            <td>占三</td>
+            <td>轩逸</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <a href="javascript:;" class="btn btn-default">btn-default</a>
+    <a href="javascript:;" class="btn btn-danger">btn-danger</a>
+    <a href="javascript:;" class="btn btn-info">btn-info</a>
+    <a href="javascript:;" class="btn btn-primary">btn-primary</a>
+    <a href="javascript:;" class="btn btn-warning">btn-warning</a>
+    <a href="javascript:;" class="btn btn-group-lg">btn-group-lg</a>
+    <a href="javascript:;" class="btn btn-group">btn-group</a>
+    <a href="javascript:;" class="btn btn-info btn-block active">btn-block</a>
+
+    <br>
+
+    <form class="form-inline">
+        <div class="form-group">
+            <label>电子邮箱：</label>
+            <input type="email" class="form-control" placeholder="请输入您的邮箱">
+        </div>
+        <div class="form-group">
+            <label>密码：</label>
+            <input type="password" class="form-control" placeholder="请输入您的密码">
+        </div>
+        <div class="input-group">
+            <div class="input-group-addon">￥</div>
+            <input type="text" class="form-control">
+            <div class="input-group-addon">.00</div>
+            <div class="input-group-addon">1323</div>
+        </div>
+    </form>
+
+    <br>
+
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">电子邮箱：</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control " placeholder="请输入您的邮箱">
+            </div>
+
+        </div>
+        <div class="form-group  has-error">
+            <label  class="col-sm-2 control-label">密码：</label>
+            <div class="col-sm-10  has-feedback">
+                <input type="password" class="form-control" placeholder="请输入您的密码">
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+            </div>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox">数学</label>
+        </div>
+        <div class="checkbox disabled">
+            <label><input type="checkbox" disabled>语文</label>
+        </div>
+    </form>
+
+    <br>
+
+    <select class="form-control">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+    </select>
+
+    <br>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <img src="../galleryPage/images/1-large.jpg" alt="圆角图片" class="img-thumbnail img-rounded">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <img src="../galleryPage/images/1-large.jpg" alt="椭圆图片" class="img-thumbnail img-circle">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <img src="../galleryPage/images/1-large.jpg" alt="略缩图" class="img-thumbnail">
+        </div>
+
+    </div>
+
+    <br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 c-bg">lg-2 md-4 sm-6</div>
+        <div class="col-lg-2 col-md-4 col-sm-6 c-bg">lg-2 md-4 sm-6</div>
+        <div class="col-lg-2 col-md-4 col-sm-6 c-bg">lg-2 md-4 sm-6</div>
+        <div class="col-lg-2 col-md-4 col-sm-6 c-bg">lg-2 md-4 sm-6</div>
+        <div class="col-lg-2 col-md-4 col-sm-6 c-bg">lg-2 md-4 sm-6</div>
+        <div class="col-lg-2 col-md-4 col-sm-6 c-bg">lg-2 md-4 sm-6</div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 c-bg">7lg-7 md-7 sm-7 xs-7</div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 c-bg">7lg-5 md-5 sm-5 xs-5</div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-lg-5 col-lg-offset-1 c-bg">offset-1</div>
+        <div class="col-lg-5 col-lg-offset-1 c-bg">offset-1</div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-lg-3 c-bg">lg-3</div>
+        <div class="col-lg-9 c-bg">lg-9</div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-lg-8 c-bg" style="padding: 0;">
+            <div class="col-lg-3 c-bg">栅格嵌套 lg-3</div>
+            <div class="col-lg-3 c-bg">栅格嵌套 lg-3</div>
+            <div class="col-lg-3 c-bg">栅格嵌套 lg-3</div>
+            <div class="col-lg-3 c-bg">栅格嵌套 lg-3</div>
+        </div>
+        <div class="col-lg-4 c-bg">lg-4</div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-lg-9 col-lg-push-3 c-bg">位置调换 push lg-9</div>
+        <div class="col-lg-3 col-lg-pull-9 c-bg">位置调换 pull lg-3</div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-lg-2 c-bg"><p class="text-muted">柔和灰 text-muted</p></div>
+        <div class="col-lg-2 c-bg"><p class="text-primary">主要蓝 text-primary</p></div>
+        <div class="col-lg-2 c-bg"><p class="text-success">成功绿 text-success</p></div>
+        <div class="col-lg-2 c-bg"><p class="text-info">信息蓝 text-info</p></div>
+        <div class="col-lg-2 c-bg"><p class="text-warning">警告黄 text-warning</p></div>
+        <div class="col-lg-2 c-bg"><p class="text-danger">危险红 text-danger</p></div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-lg-2 c-bg">input+.close <input type="button" class="close" value="&times;"></div>
+        <div class="col-lg-2 c-bg">button+.close <button class="close">&times;</button></div>
+        <div class="col-lg-2 c-bg">a+.close <a href="javascript:;" class="close">&times;</a></div>
+        <div class="col-lg-2 c-bg">span+.caret <span class="caret"></span></div>
+        <div class="col-lg-2 c-bg">.show <p class="show pull-right">显示</p></div>
+        <div class="col-lg-2 c-bg">.hidden <p class="hidden">隐藏</p></div>
+    </div>
+
+    <br>
+
+    <div class="w200-h50 pull-left clearfix">左边pull-left  !important</div>
+    <div class="w200-h50 pull-right clearfix">右边pull-right  !important</div>
+    <div class="w200-h50 center-block">区块居中center-block</div>
+
+    <br>
+
+    <div class="row">
+
+        <div class="col-lg-12 c-bg p0">
+            <div class="hidden-xs c-bg">最小屏幕显隐藏 hidden-xs</div>
+            <!--<div class="visible-xs c-bg">最小屏幕显示 visible-xs</div>-->
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-lg-6 c-bg">
+            图标 .glyphicon .glyphicon-xxx  <i class="glyphicon glyphicon-star"></i>
+        </div>
+        <div class="col-lg-6 c-bg ">
+            图标加按钮 .glyphicon .glyphicon-xxx
+            <button class="btn btn-default"><i class="glyphicon glyphicon-star"></i></button>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="dropdown">
+        <button class="btn btn-default" data-toggle="dropdown">
+            下拉菜单 <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">这是一个不能点击的标题</li>
+            <li class="divider"></li>
+            <li><a href="javascript:;">首页</a></li>
+            <li><a href="javascript:;">资讯</a></li>
+            <li><a href="javascript:;">产品</a></li>
+            <li><a href="javascript:;">服务</a></li>
+            <li><a href="javascript:;">关于</a></li>
+        </ul>
+    </div>
+
+    <br>
+
+    <div class="btn-group">
+        <button class="btn btn-default" data-toggle="dropdown">下拉菜单</button>
+        <button class="btn btn-default dropdown-toggle" >
+             <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">这是一个不能点击的标题</li>
+            <li class="divider"></li>
+            <li><a href="javascript:;">首页</a></li>
+            <li><a href="javascript:;">资讯</a></li>
+            <li><a href="javascript:;">产品</a></li>
+            <li><a href="javascript:;">服务</a></li>
+            <li><a href="javascript:;">关于</a></li>
+        </ul>
+    </div>
+
+    <br>
+    <div class="btn-group pull-right">
+
+        <button class="btn btn-default">左</button>
+        <button class="btn btn-default">中</button>
+        <button class="btn btn-default">右</button>
+    </div>
+
+    <br>
+
+    <div class="btn-toolbar">
+        <div class="btn-group btn-group-lg">
+
+            <button class="btn btn-default">左</button>
+            <button class="btn btn-default">中</button>
+            <button class="btn btn-default">右</button>
+        </div>
+        <div class="btn-group">
+
+            <button class="btn btn-default">左</button>
+            <button class="btn btn-default">中</button>
+            <button class="btn btn-default">右</button>
+            <div class="btn-group">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    下拉菜单 <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">这是一个不能点击的标题</li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:;">首页</a></li>
+                    <li><a href="javascript:;">资讯</a></li>
+                    <li><a href="javascript:;">产品</a></li>
+                    <li><a href="javascript:;">服务</a></li>
+                    <li><a href="javascript:;">关于</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <br>
+    <!--垂直按钮组-->
+    <div class="btn-group btn-group-vertical">
+
+        <button class="btn btn-default">左</button>
+        <button class="btn btn-default">中</button>
+        <button class="btn btn-default">右</button>
+    </div>
+
+    <br>
+
+    <!--等宽按钮组-->
+    <div class="btn-group-justified">
+        <a type="button" class="btn btn-default" href="javascript:;">左</a>
+        <a type="button" class="btn btn-default" href="javascript:;">中</a>
+        <a type="button" class="btn btn-default" href="javascript:;">右</a>
+    </div>
+
+    <br>
+    <!--文本框和按钮的组合-->
+    <div class="input-group">
+        <input type="text" class="form-control">
+        <div class="input-group-btn">
+            <button class="btn btn-default">提交</button>
+        </div>
+    </div>
+
+    <br>
+    <!--下单菜单和文本框组合-->
+    <div class="input-group">
+        <input type="text" class="form-control">
+        <div class="input-group-btn">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                下拉菜单 <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li class="dropdown-header">这是一个不能点击的标题</li>
+                <li class="divider"></li>
+                <li><a href="javascript:;">首页</a></li>
+                <li><a href="javascript:;">资讯</a></li>
+                <li><a href="javascript:;">产品</a></li>
+                <li><a href="javascript:;">服务</a></li>
+                <li><a href="javascript:;">关于</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <br>
+    <!--tabs 导航-->
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">首页</a></li>
+        <li><a href="javascript:;">资讯</a></li>
+        <li><a href="javascript:;">产品</a></li>
+        <li><a href="javascript:;">服务</a></li>
+        <li><a href="javascript:;">关于</a></li>
+    </ul>
+
+    <br>
+    <!--pills导航-->
+    <ul class="nav nav-pills">
+        <li class="active"><a href="javascript:;">首页</a></li>
+        <li><a href="javascript:;">资讯</a></li>
+        <li><a href="javascript:;">产品</a></li>
+        <li><a href="javascript:;">服务</a></li>
+        <li><a href="javascript:;">关于</a></li>
+    </ul>
+
+    <br>
+    <!--垂直pills导航-->
+    <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="javascript:;">首页</a></li>
+        <li><a href="javascript:;">资讯</a></li>
+        <li><a href="javascript:;">产品</a></li>
+        <li><a href="javascript:;">服务</a></li>
+        <li><a href="javascript:;">关于</a></li>
+    </ul>
+
+    <br>
+    <!--等宽导航-->
+    <ul class="nav nav-pills nav-justified">
+        <li class="active"><a href="javascript:;">首页</a></li>
+        <li><a href="javascript:;">资讯</a></li>
+        <li><a href="javascript:;">产品</a></li>
+        <li><a href="javascript:;">服务</a></li>
+        <li><a href="javascript:;">关于</a></li>
+    </ul>
+
+    <br>
+    <!--组合下拉菜单的pills导航-->
+    <ul class="nav nav-pills">
+        <li class="active"><a href="javascript:;">首页</a></li>
+        <li><a href="javascript:;">资讯</a></li>
+        <li><a href="javascript:;">产品</a></li>
+        <li><a href="javascript:;">服务</a></li>
+        <li class="dropdown">
+            <a href="javascript:;" data-toggle="dropdown">导航组合下拉菜单 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li class="dropdown-header">这是一个不能点击的标题</li>
+                <li class="divider"></li>
+                <li><a href="javascript:;">首页</a></li>
+                <li><a href="javascript:;">资讯</a></li>
+                <li><a href="javascript:;">产品</a></li>
+                <li><a href="javascript:;">服务</a></li>
+                <li><a href="javascript:;">关于</a></li>
+            </ul>
+        </li>
+        <li><a href="javascript:;">关于</a></li>
+    </ul>
+
+    <br>
+    <!--主导航 默认-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:;" class="navbar-brand">有浮动navbar-brand</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="javascript:;">首页</a></li>
+                <li><a href="javascript:;">资讯</a></li>
+                <li><a href="javascript:;">产品</a></li>
+                <li><a href="javascript:;">服务</a></li>
+                <li><a href="javascript:;">关于</a></li>
+            </ul>
+            <form action="" class="navbar-form navbar-right">
+                <div class="input-group">
+                    <input type="text" class="form-control">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                </div>
+            </form>
+            <button class="btn btn-default navbar-btn navbar-left">btn</button>
+            <p class="navbar-text">一段文本 <a class="navbar-link" href="javscript:;">超链接</a></p>
+
+        </div>
+
+    </nav>
+
+    <br>
+    <!--面包屑导航-->
+    <ol class="breadcrumb">
+        <li><a href="javscript:;">面包屑导航1</a></li>
+        <li><a href="javscript:;">面包屑导航2</a></li>
+        <li class="active">面包屑导航3</li>
+    </ol>
+
+    <br>
+    <!--分页-->
+    <ul class="pagination">
+        <li><a href="javscript:;">&laquo;</a></li>
+        <li><a href="javscript:;">分页1</a></li>
+        <li><a href="javscript:;">分页2</a></li>
+        <li><a href="javscript:;">分页3</a></li>
+        <li><a href="javscript:;">&raquo;</a></li>
+    </ul>
+
+    <br>
+    <!--只有上下页的分页 中间放-->
+    <ul class="pager">
+        <li><a href="javascript:;">上一页</a></li>
+        <li><a href="javascript:;">下一页</a></li>
+    </ul>
+
+    <br>
+    <!--上下分页  分别左右两边放-->
+    <ul class="pager">
+        <li class="previous"><a href="javascript:;">上一页</a></li>
+        <li class="next"><a href="javascript:;">下一页</a></li>
+    </ul>
+
+    <br>
+    <!--小标题提示 徽章-->
+    <div>
+    <h2>H2 <span class="label label-info">小提示</span></h2>
+    <a href="javascript:;">信息<span class="badge">10</span></a>
+    </div>
+    <br>
+    <!--超大屏幕 布局 这个包含在container里面-->
+    <div class="jumbotron">
+        <h3>网站标题</h3>
+        <p>我是网站的详细简介！</p>
+        <p><a href="javascript:;" class="btn btn-default">快速进入</a></p>
+    </div>
+
+    <br>
+    <!--图片展示 使用略缩图-->
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="thumbnail">
+                <img src="../galleryPage/images/1-large.jpg" alt="图片1">
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="thumbnail">
+            <img src="../galleryPage/images/2-large.jpg" alt="图片2">
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="thumbnail">
+                <img src="../galleryPage/images/3-large.jpg" alt="图片3">
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="thumbnail">
+                <img src="../galleryPage/images/4-large.jpg" alt="图片4">
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="thumbnail">
+                <img src="../galleryPage/images/5-large.jpg" alt="图片5">
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="thumbnail">
+                <img src="../galleryPage/images/6-large.jpg" alt="图片6">
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <!--图文展示 使用略缩图-->
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="thumbnail">
+                <img src="../galleryPage/images/1-large.jpg" alt="图片1">
+                <div class="caption">
+                    <h3>图片1</h3>
+                    <p>关于这张图片的详情！</p>
+                    <p><a href="javascript:;" class="btn btn-default">快速进入</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="thumbnail">
+                <img src="../galleryPage/images/2-large.jpg" alt="图片2">
+                <div class="caption">
+                    <h3>图片1</h3>
+                    <p>关于这张图片的详情！</p>
+                    <p><a href="javascript:;" class="btn btn-default">快速进入</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="thumbnail">
+                <img src="../galleryPage/images/3-large.jpg" alt="图片3">
+                <div class="caption">
+                    <h3>图片1</h3>
+                    <p>关于这张图片的详情！</p>
+                    <p><a href="javascript:;" class="btn btn-default">快速进入</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="thumbnail">
+                <img src="../galleryPage/images/4-large.jpg" alt="图片4">
+                <div class="caption">
+                    <h3>图片1</h3>
+                    <p>关于这张图片的详情！</p>
+                    <p><a href="javascript:;" class="btn btn-default">快速进入</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="thumbnail">
+                <img src="../galleryPage/images/5-large.jpg" alt="图片5">
+                <div class="caption">
+                    <h3>图片1</h3>
+                    <p>关于这张图片的详情！</p>
+                    <p><a href="javascript:;" class="btn btn-default">快速进入</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="thumbnail">
+                <img src="../galleryPage/images/6-large.jpg" alt="图片6">
+                <div class="caption">
+                    <h3>图片1</h3>
+                    <p>关于这张图片的详情！</p>
+                    <p><a href="javascript:;" class="btn btn-default">快速进入</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <!--一系列警告框-->
+    <div class="alert alert-success">成功警告框 .alert .alert-success <button class="close" data-dismiss="alert">&times;</button></div>
+    <div class="alert alert-info">信息警告框 .alert .alert-info </div>
+    <div class="alert alert-danger">危险警告框 .alert .alert-danger </div>
+    <div class="alert alert-warning">警告警告框 .alert .alert-warning 请<a href="javascript:;" class="alert-link">下载(.alert-link)</a>最新版本！</div>
+
+    <br>
+    <!--well-->
+    <div class="well">
+        this well
+    </div>
+
+    <br>
+    <!--进度条-->
+    <div class="progress">
+        <div class="progress-bar" style="width: 60%;">60%</div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-info" style="min-width: 2%;">0%</div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped" style="min-width: 2%;width: 70%">谷歌火狐才支持条纹状</div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped active" style="min-width: 2%;width: 70%">只有斑马线的才能用active动画</div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-danger progress-bar-striped active" style="min-width: 2%;width: 20%">堆叠进度条</div>
+        <div class="progress-bar progress-bar-warning progress-bar-striped active" style="min-width: 2%;width: 30%">堆叠进度条</div>
+        <div class="progress-bar progress-bar-info progress-bar-striped active" style="min-width: 2%;width: 50%">堆叠进度条</div>
+    </div>
+
+    <br>
+    <!--媒体对象组件-->
+    <div class="media">
+        <div class="media-left media-middle">
+            <img src="../galleryPage/images/1-large.jpg" alt="" class="media-object img-thumbnail">
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">标题 media-heading</h4>
+            <p>企鹅（学名：Spheniscidae）：有“海洋之舟”美称的企鹅是一种最古老的游禽，它们很可能在地球穿上冰甲之前，就已经在南极安家落户。全世界的企鹅共有17种，大多数都分布在南半球。主要生活在南半球，属于企鹅目，企鹅科。特征为不能飞翔；脚生于身体最下部，故呈直立姿势；趾间有蹼；跖行性（其他鸟类以趾着地）；前肢成鳍状；羽毛短，以减少摩擦和湍流；羽毛间存留一层空气，用以保温。背部黑色，腹部白色。各个种的主要区别在于头部色型和个体大小。</p>
+        </div>
+    </div>
+
+    <!--类似论坛论坛回帖 层叠进去-->
+    <ul class="media-list">>
+        <li class="media">
+            <div class="media-left">
+                <img src="../galleryPage/images/1-large.jpg" alt="" class="media-object img-thumbnail">
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">标题 media-heading</h4>
+                <p>企鹅（学名：Spheniscidae）：有“海洋之舟”美称的企鹅是一种最古老的游禽，它们很可能在地球穿上冰甲之前，就已经在南极安家落户。全世界的企鹅共有17种，大多数都分布在南半球。主要生活在南半球，属于企鹅目，企鹅科。特征为不能飞翔；脚生于身体最下部，故呈直立姿势；趾间有蹼；跖行性（其他鸟类以趾着地）；前肢成鳍状；羽毛短，以减少摩擦和湍流；羽毛间存留一层空气，用以保温。背部黑色，腹部白色。各个种的主要区别在于头部色型和个体大小。</p>
+                <div class="media">
+                    <div class="media-left">
+                        <img src="../galleryPage/images/1-large.jpg" alt="" class="media-object img-thumbnail">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">标题 media-heading</h4>
+                        <p>企鹅（学名：Spheniscidae）：有“海洋之舟”美称的企鹅是一种最古老的游禽，它们很可能在地球穿上冰甲之前，就已经在南极安家落户。全世界的企鹅共有17种，大多数都分布在南半球。主要生活在南半球，属于企鹅目，企鹅科。特征为不能飞翔；脚生于身体最下部，故呈直立姿势；趾间有蹼；跖行性（其他鸟类以趾着地）；前肢成鳍状；羽毛短，以减少摩擦和湍流；羽毛间存留一层空气，用以保温。背部黑色，腹部白色。各个种的主要区别在于头部色型和个体大小。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <img src="../galleryPage/images/1-large.jpg" alt="" class="media-object img-thumbnail">
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">标题 media-heading</h4>
+                    <p>企鹅（学名：Spheniscidae）：有“海洋之舟”美称的企鹅是一种最古老的游禽，它们很可能在地球穿上冰甲之前，就已经在南极安家落户。全世界的企鹅共有17种，大多数都分布在南半球。主要生活在南半球，属于企鹅目，企鹅科。特征为不能飞翔；脚生于身体最下部，故呈直立姿势；趾间有蹼；跖行性（其他鸟类以趾着地）；前肢成鳍状；羽毛短，以减少摩擦和湍流；羽毛间存留一层空气，用以保温。背部黑色，腹部白色。各个种的主要区别在于头部色型和个体大小。</p>
+                </div>
+            </div>
+        </li>
+        <li class="media">
+            <div class="media-left">
+                <img src="../galleryPage/images/1-large.jpg" alt="" class="media-object img-thumbnail">
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">标题 media-heading</h4>
+                <p>企鹅（学名：Spheniscidae）：有“海洋之舟”美称的企鹅是一种最古老的游禽，它们很可能在地球穿上冰甲之前，就已经在南极安家落户。全世界的企鹅共有17种，大多数都分布在南半球。主要生活在南半球，属于企鹅目，企鹅科。特征为不能飞翔；脚生于身体最下部，故呈直立姿势；趾间有蹼；跖行性（其他鸟类以趾着地）；前肢成鳍状；羽毛短，以减少摩擦和湍流；羽毛间存留一层空气，用以保温。背部黑色，腹部白色。各个种的主要区别在于头部色型和个体大小。</p>
+            </div>
+        </li>
+    </ul>
+
+    <br>
+    <!--列表组-->
+    <ul class="list-group">
+        <li class="list-group-item"><a href="javascript:;">这是一个ul+li+a列表组</a></li>
+        <li class="list-group-item"><a href="javascript:;">这是一个ul+li+a列表组</a></li>
+        <li class="list-group-item"><a href="javascript:;">这是一个ul+li+a列表组</a></li>
+        <li class="list-group-item"><a href="javascript:;">这是一个ul+li+a列表组</a></li>
+        <li class="list-group-item"><a href="javascript:;">这是一个ul+li+a列表组</a></li>
+    </ul>
+    <div class="list-group">
+        <a href="javascript:;" class="list-group-item  active">这是div+a组合的列表组 激活的</a><a href="javascript:;" class="list-group-item">这是div+a组合的列表组</a><a
+            href="javascript:;" class="list-group-item">这是div+a组合的列表组 这是加了徽章的 <span class="badge">SP</span></a><a href="javascript:;" class="list-group-item">这是div+a组合的列表组</a><a
+            href="javascript:;" class="list-group-item">这是div+a组合的列表组</a>
+    </div>
+
+    <br>
+    <!--面板 比如登录 注册那些-->
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            这是panel 头部 有六种状态 default info danger primary success warning
+        </div>
+        <div class="panel-body">
+            这是panel 主体
+        </div>
+        <div class="panel-footer">
+            这是panel 尾部
+        </div>
+    </div>
+
+    <br>
+    <!--响应式 媒体-->
+    <div class="embed-responsive embed-responsive-16by9">
+        <embed src="http://www.tudou.com/l/yDAr7mb13L8/&bid=05&iid=261702236&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>
+    </div>
+
+    <br>
+    <!--模态框插件-->
+    <div class="modal fade" id="myFirstModal" tabindex="-1">
+        <!--窗口声明-->
+        <div class="modal-dialog">
+            <!--内容声明-->
+            <div class="modal-content">
+                <!--内容头部-->
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <!--会员登录-->
+                    <div class="modal-title">会员登录</div>
+
+                </div>
+                <!--内容主体-->
+                <div class="modal-body">
+                    暂时无法使用
+                </div>
+                <!--内容脚注-->
+                <div class="modal-footer">
+                    <button class="btn btn-info">登录</button>
+                    <button class="btn btn-default">注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+    <button class="btn btn-info" data-toggle="modal" data-target="#myFirstModal">弹出模态框</button>
+    </div>
+    <br>
+    <!--下拉菜单和滚动监听-->
+    <div class="dropdown">
+        <button class="btn btn-primary" data-toggle="dropdown">下拉菜单 <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="javascript:;">首页</a></li>
+            <li><a href="javascript:;">咨询</a></li>
+            <li><a href="javascript:;">产品</a></li>
+            <li><a href="javascript:;">服务</a></li>
+            <li><a href="javascript:;">关于</a></li>
+        </ul>
+    </div>
+    <br>
+    <div class="navbar navbar-default" id="nav">
+        <div class="navbar-brand">滚动监听</div>
+        <ul class="nav navbar-nav">
+            <li><a href="#html5">HTML5</a></li>
+            <li><a href="#bootstrap">Bootstrap</a></li>
+            <li><a href="javascript:;" class="dropdown" data-toggle="dropdown">
+                JavaScript <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#jquery">Jquery</a></li>
+                    <li><a href="#yui">Yui</a></li>
+                    <li><a href="#extjs">ExtJs</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div data-offset="0" data-target="#nav" data-spy="scroll" style="position: relative;height: 200px;overflow: auto">
+        <h4 id="html5">HTML5</h4>
+        <p>标准通用标记语言下的一个应用HTML标准自1999年12月发布的HTML4.01后，后继的HTML5和其它标准被束之高阁，为了推动Web标准化运动的发展，一些公司联合起来，成立了一个叫做 Web Hypertext Application Technology Working Group （Web超文本应用技术工作组 -WHATWG） 的组织。WHATWG 致力于 Web 表单和应用程序，而W3C（World Wide Web Consortium，万维网联盟） 专注于XHTML2.0。在 2006 年，双方决定进行合作，来创建一个新版本的 HTML。</p>
+        <p>HTML5草案的前身名为 Web Applications 1.0，于2004年被WHATWG提出，于2007年被W3C接纳，并成立了新的 HTML 工作团队。</p>
+        <p>HTML 5 的第一份正式草案已于2008年1月22日公布。HTML5 仍处于完善之中。然而，大部分现代浏览器已经具备了某些 HTML5 支持。</p>
+        <p>2012年12月17日，万维网联盟（W3C）正式宣布凝结了大量网络工作者心血的HTML5规范已经正式定稿。根据W3C的发言稿称：“HTML5是开放的Web网络平台的奠基石。”</p>
+        <p>2013年5月6日， HTML 5.1正式草案公布。该规范定义了第五次重大版本，第一次要修订万维网的核心语言：超文本标记语言（HTML）。在这个版本中，新功能不断推出，以帮助Web应用程序的作者，努力提高新元素互操作性。</p>
+        <h4 id="bootstrap">Bootstrap</h4>
+        <p>Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架。Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。Bootstrap一经推出后颇受欢迎，一直是GitHub上的热门开源项目，包括NASA的MSNBC（微软全国广播公司）的Breaking News都使用了该项目。国内一些移动开发者较为熟悉的框架，如WeX5前端开源框架等，也是基于Bootstrap源码进行性能优化而来。</p>
+        <h4 id="jquery">Jquery</h4>
+        <p>大概在 1992 年，一家称作 Nombas 的公司开发了一种叫做 C 减减（C-minus-minus，简称 Cmm）的嵌入式脚本语言。Cmm 背后的理念很简单：一个足够强大可以替代宏操作（macro）的脚本语言，同时保持与 C （和 C ++）足够的相似性，以便开发人员能很快学会。这个脚本语言捆绑在一个叫做 CEnvi 的共享软件中，它首次向开发人员展示了这种语言的威力。</p>
+        <p>Nombas 最终把 Cmm 的名字改成了 ScriptEase，原因是后面的部分（mm）听起来过于消极，同时字母 C “令人害怕”。</p>
+        <p>当 Netscape Navigator 崭露头角时，Nombas 开发了一个可以嵌入网页中的 CEnvi 的版本。这些早期的试验被称为 Espresso Page（浓咖啡般的页面），它们代表了第一个在万维网上使用的客户端语言。而 Nombas 丝毫没有料到它的理念将会成为万维网的一块重要基石。</p>
+        <p>当网上冲浪越来越流行时，对于开发客户端脚本的需求也逐渐增大。此时，大部分因特网用户还仅仅通过 28.8 kbit/s 的调制解调器连接到网络，即便这时网页已经不断地变得更大和更复杂。而更加加剧用户痛苦的是，仅仅为了简单的表单有效性验证，就要与服务器进行多次地往返交互。设想一下，用户填完一个表单，点击提交按钮，等待了 30 秒的处理后，看到的却是一条告诉你忘记填写一个必要的字段。</p>
+        <h4 id="yui">Yui</h4>
+        <p>Yahoo! UI Library (YUI) 是一个开放源代码的 JavaScript 函数库，为了能建立一个高互动的网页，它采用了AJAX, DHTML 和 DOM 等程式码技术。它也包含了许多 CSS 资源。使用授权为 BSD许可证</p>
+        <h4 id="extjs">ExtJS</h4>
+        <p>第一只“出海”的YUI-Ext只是作者Jack打算对基于BSD协议的Yahoo! User Interface (YUI)库进行自定义的扩展，但后来一度风头盖过其父辈YUI，足以说明 大家对它的热情，很多人把它投入项目，但并不十分了解它。分析人士打了一个比喻：就好比尚未谋面， 并不了解一个人的家庭、教育、品行等背景，只因为他有一副精致漂亮的外观，就对其陷入了疯狂的倾慕之中。因此分析人士建议，在投入项目之前，要认真仔细地了 解EXT的内在原理和与其他Ajax库不同地方。</p>
+        <p>在2006年初 ，Jack Slocum(杰克.斯洛克姆 ) 就一套公用设施扩建为YUI 库而工作。这些扩展很快组织成一个独立的库代码并以“yui-ext"的名义下发布。</p>
+        <p>在2006年秋天,Jack发行了版本为0.33的yui-ext,而最终被证明为最后版本的代码，根据这名字（下开放源代码DSB许可）。在年底之前，这个库已大受欢迎, 名字被简化为Ext，反映了它作为一个框架的成熟和独立。</p>
+        <p>在2007年4月1日，发布1.0正式版。</p>
+        <p>官方在2009年4月14-16日的首次Ext Conference中发布了Ext的3.0 RC版本。</p>
+    </div>
+    <br>
+    <ul class="nav nav-tabs" >
+        <li class="active"><a href="#tab-html5" data-toggle="tab">html5</a></li>
+        <li><a href="#tab-bootstrap" data-toggle="tab">bootstrap</a></li>
+        <li><a href="#tab-jquery" data-toggle="tab">jquery</a></li>
+        <li><a href="#tab-yui" data-toggle="tab">yui</a></li>
+        <li><a href="#tab-extjs" data-toggle="tab">extjs</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active fade in" id="tab-html5">
+            <p>标准通用标记语言下的一个应用HTML标准自1999年12月发布的HTML4.01后，后继的HTML5和其它标准被束之高阁，为了推动Web标准化运动的发展，一些公司联合起来，成立了一个叫做 Web Hypertext Application Technology Working Group （Web超文本应用技术工作组 -WHATWG） 的组织。WHATWG 致力于 Web 表单和应用程序，而W3C（World Wide Web Consortium，万维网联盟） 专注于XHTML2.0。在 2006 年，双方决定进行合作，来创建一个新版本的 HTML。</p>
+            <p>HTML5草案的前身名为 Web Applications 1.0，于2004年被WHATWG提出，于2007年被W3C接纳，并成立了新的 HTML 工作团队。</p>
+            <p>HTML 5 的第一份正式草案已于2008年1月22日公布。HTML5 仍处于完善之中。然而，大部分现代浏览器已经具备了某些 HTML5 支持。</p>
+            <p>2012年12月17日，万维网联盟（W3C）正式宣布凝结了大量网络工作者心血的HTML5规范已经正式定稿。根据W3C的发言稿称：“HTML5是开放的Web网络平台的奠基石。”</p>
+            <p>2013年5月6日， HTML 5.1正式草案公布。该规范定义了第五次重大版本，第一次要修订万维网的核心语言：超文本标记语言（HTML）。在这个版本中，新功能不断推出，以帮助Web应用程序的作者，努力提高新元素互操作性。</p>
+        </div>
+        <div class="tab-pane fade" id="tab-bootstrap">
+            <p>Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架。Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。Bootstrap一经推出后颇受欢迎，一直是GitHub上的热门开源项目，包括NASA的MSNBC（微软全国广播公司）的Breaking News都使用了该项目。国内一些移动开发者较为熟悉的框架，如WeX5前端开源框架等，也是基于Bootstrap源码进行性能优化而来。</p>
+        </div>
+        <div class="tab-pane fade" id="tab-jquery">
+            <p>大概在 1992 年，一家称作 Nombas 的公司开发了一种叫做 C 减减（C-minus-minus，简称 Cmm）的嵌入式脚本语言。Cmm 背后的理念很简单：一个足够强大可以替代宏操作（macro）的脚本语言，同时保持与 C （和 C ++）足够的相似性，以便开发人员能很快学会。这个脚本语言捆绑在一个叫做 CEnvi 的共享软件中，它首次向开发人员展示了这种语言的威力。</p>
+            <p>Nombas 最终把 Cmm 的名字改成了 ScriptEase，原因是后面的部分（mm）听起来过于消极，同时字母 C “令人害怕”。</p>
+            <p>当 Netscape Navigator 崭露头角时，Nombas 开发了一个可以嵌入网页中的 CEnvi 的版本。这些早期的试验被称为 Espresso Page（浓咖啡般的页面），它们代表了第一个在万维网上使用的客户端语言。而 Nombas 丝毫没有料到它的理念将会成为万维网的一块重要基石。</p>
+            <p>当网上冲浪越来越流行时，对于开发客户端脚本的需求也逐渐增大。此时，大部分因特网用户还仅仅通过 28.8 kbit/s 的调制解调器连接到网络，即便这时网页已经不断地变得更大和更复杂。而更加加剧用户痛苦的是，仅仅为了简单的表单有效性验证，就要与服务器进行多次地往返交互。设想一下，用户填完一个表单，点击提交按钮，等待了 30 秒的处理后，看到的却是一条告诉你忘记填写一个必要的字段。</p>
+        </div>
+        <div class="tab-pane fade" id="tab-yui">
+            <p>Yahoo! UI Library (YUI) 是一个开放源代码的 JavaScript 函数库，为了能建立一个高互动的网页，它采用了AJAX, DHTML 和 DOM 等程式码技术。它也包含了许多 CSS 资源。使用授权为 BSD许可证</p>
+        </div>
+        <div class="tab-pane fade" id="tab-extjs">
+            <p>第一只“出海”的YUI-Ext只是作者Jack打算对基于BSD协议的Yahoo! User Interface (YUI)库进行自定义的扩展，但后来一度风头盖过其父辈YUI，足以说明 大家对它的热情，很多人把它投入项目，但并不十分了解它。分析人士打了一个比喻：就好比尚未谋面， 并不了解一个人的家庭、教育、品行等背景，只因为他有一副精致漂亮的外观，就对其陷入了疯狂的倾慕之中。因此分析人士建议，在投入项目之前，要认真仔细地了 解EXT的内在原理和与其他Ajax库不同地方。</p>
+            <p>在2006年初 ，Jack Slocum(杰克.斯洛克姆 ) 就一套公用设施扩建为YUI 库而工作。这些扩展很快组织成一个独立的库代码并以“yui-ext"的名义下发布。</p>
+            <p>在2006年秋天,Jack发行了版本为0.33的yui-ext,而最终被证明为最后版本的代码，根据这名字（下开放源代码DSB许可）。在年底之前，这个库已大受欢迎, 名字被简化为Ext，反映了它作为一个框架的成熟和独立。</p>
+            <p>在2007年4月1日，发布1.0正式版。</p>
+            <p>官方在2009年4月14-16日的首次Ext Conference中发布了Ext的3.0 RC版本。</p>
+        </div>
+    </div>
+    <br>
+    <div class="btn-group" data-toggle="buttons">
+        <label for=""  class="btn btn-default active"><input type="radio" name="only" checked>男</label>
+        <label for="" class="btn btn-default"><input type="radio" name="only" >女</label>
+    </div>
+    <br>
+    <div>
+        <button id="btn-loading" class="btn btn-danger" data-loading-text="loading...">开始上传</button>
+    </div>
+    <br>
+    <!--手风琴效果-->
+    <div class="panel-group" id="collapseParent">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#collapseOne" data-toggle="collapse" data-parent="#collapseParent">第一个选项</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    第一个选项内容
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#collapseTwo" data-toggle="collapse" data-parent="#collapseParent">第二个选项</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    第二个选项内容
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#collapseThree" data-toggle="collapse" data-parent="#collapseParent">第三个选项</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    第三个选项内容
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#collapseFour" data-toggle="collapse" data-parent="#collapseParent">第四个选项</a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+                <div class="panel-body">
+                    第四个选项内容
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#collapseFive" data-toggle="collapse" data-parent="#collapseParent">第五个选项</a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+                <div class="panel-body">
+                    第五个选项内容
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!--附加导航插件-->
+    <br>
+
+</div>
+<!--<div class="jumbotron">-->
+    <!--<div class="container">-->
+        <!--<h3>网站标题</h3>-->
+        <!--<p>我是网站的详细简介！ margin:50px jumbotron</p>-->
+        <!--<p><a href="javascript:;" class="btn btn-default">快速进入</a></p>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+    <!--<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>-->
+    <script src="dist/js/jquery-1.9.1.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script>
+        $("#myFirstModal").on('show.bs.modal',function () {
+            console.log('当调用show方法时立即执行！'+new Date())
+        })
+        $("#myFirstModal").on('shown.bs.modal',function () {
+            console.log('当弹窗完全出现再执行！'+new Date())
+        })
+        $("#myFirstModal").on('hide.bs.modal',function () {
+            console.log('当调用hide方法时立即触发！'+new Date())
+        })
+        $("#myFirstModal").on('hidden.bs.modal',function () {
+            console.log('当窗体完全关闭后触发！'+new Date())
+        })
+        $("#myFirstModal").on('loaded.bs.modal',function () {
+            console.log('当远程加载后触发！'+new Date())
+        })
+
+        $('#nav').on('activate.bs.scrollspy' , function () {
+            console.log('新条目被激活后触发此事件！ refresh 删除的时候更新')
+        })
+
+        $('#btn-loading').on('click',function () {
+            var btn = $(this).button('loading');
+            setTimeout(function () {
+                btn.button('reset')
+            },1000)
+        })
+
+        $("#myCarousel").carousel({
+            interval:50000
+        })
+    </script>
+</body>
+</html>

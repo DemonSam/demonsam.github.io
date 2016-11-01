@@ -14,12 +14,16 @@
 <meta name="author" content="DemonSam" />
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tooFar">
-<meta property="og:url" content="http://www.toofar.top/archives/2016/index.html">
+<meta name="description" content="学习HTML5，移动端开发第一篇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习HTML5/移动开发">
+<meta property="og:url" content="http://www.toofar.top/2016/10/23/learnH5/index.html">
 <meta property="og:site_name" content="tooFar">
+<meta property="og:description" content="学习HTML5，移动端开发第一篇">
+<meta property="og:updated_time" content="2016-10-23T06:09:12.419Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tooFar">
+<meta name="twitter:title" content="学习HTML5/移动开发">
+<meta name="twitter:description" content="学习HTML5，移动端开发第一篇">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -51,7 +55,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2016 | tooFar</title>
+<title>学习HTML5/移动开发 | tooFar</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -61,8 +65,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -240,89 +244,179 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-learnH5" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/10/23/learnH5/" class="archive-article-date">
-      <time datetime="2016-10-23T05:30:23.000Z" itemprop="datePublished">10-23</time>
+    <div class="article-meta">
+      <a href="/2016/10/23/learnH5/" class="article-date">
+      <time datetime="2016-10-23T05:30:23.000Z" itemprop="datePublished">2016-10-23</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/23/learnH5/">学习HTML5/移动开发</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      学习HTML5/移动开发
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端开发/">移动端开发</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>学习HTML5，移动端开发第一篇<br><a id="more"></a></p>
+<h2 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h2><h3 id="HTML5标签发信息"><a href="#HTML5标签发信息" class="headerlink" title="HTML5标签发信息"></a>HTML5标签发信息</h3><p><small>Android和写法不同<small><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Android写法</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"sms:号码?body=发送内容"</span>&gt;</span></div><div class="line">IOS写法</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"sms:号码&amp;body=发送内容"</span>&gt;</span></div></pre></td></tr></table></figure></small></small></p>
+<hr>
+<h3 id="去掉-a，input-在移动端浏览器中的默认样式IOS"><a href="#去掉-a，input-在移动端浏览器中的默认样式IOS" class="headerlink" title="去掉 a，input 在移动端浏览器中的默认样式IOS"></a>去掉 a，input 在移动端浏览器中的默认样式IOS</h3><ol>
+<li><p>禁止 a 标签背景<br>在移动端使用 a标签做按钮的时候，点按会出现一个“暗色”的背景，去掉该背景的方法如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span>,<span class="selector-tag">button</span>,<span class="selector-tag">input</span>,<span class="selector-tag">optgroup</span>,<span class="selector-tag">select</span>,<span class="selector-tag">textarea</span> &#123;</div><div class="line">  <span class="attribute">-webkit-tap-highlight-color</span>:<span class="built_in">rgba</span>(0,0,0,0);</div><div class="line">  <span class="comment">/*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>禁止长按 a，img 标签长按出现菜单栏<br>使用 a标签的时候，移动端长按会出现一个 菜单栏，这个时候禁止呼出菜单栏的方法如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span>, <span class="selector-tag">img</span> &#123;</div><div class="line">    <span class="attribute">-webkit-touch-callout</span>: none; <span class="comment">/*禁止长按链接与图片弹出菜单*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>流畅滚动</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">  <span class="attribute">-webkit-overflow-scrolling</span>:touch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>点击查看<a href="http://mp.weixin.qq.com/s?__biz=MzA5NTM2MTEzNw==&amp;mid=2736710894&amp;idx=1&amp;sn=3d502cd209be370b94b302a169802344&amp;chksm=b6aac5f081dd4ce68bdb88f0e5c8494438ce1ef5751e9f985c45a7fabe939647b349173550ed&amp;scene=21#wechat_redirect" target="_blank" rel="external">原文</a></p>
+</blockquote>
+
+      
+    </div>
+    
   </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/10/06/firsttime/">
+                    清风淡水
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/10/06/firsttime/" class="archive-article-date">
-      <time datetime="2016-10-06T09:11:57.000Z" itemprop="datePublished">10-06</time>
-</a>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5"><span class="toc-number">1.</span> <span class="toc-text">HTML5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5标签发信息"><span class="toc-number">1.1.</span> <span class="toc-text">HTML5标签发信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#去掉-a，input-在移动端浏览器中的默认样式IOS"><span class="toc-number">1.2.</span> <span class="toc-text">去掉 a，input 在移动端浏览器中的默认样式IOS</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/06/firsttime/">清风淡水</a>
-    </h1>
-  
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"学习HTML5/移动开发　| tooFar　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
-        <div class="article-info info-on-archive">
-          
+    
+</div>
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闲谈/">闲谈</a></li></ul>
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2116436';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/10/06/firsttime/" title="下一篇: 清风淡水">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/23/learnH5/">学习HTML5/移动开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/firsttime/">清风淡水</a></li></ul>
 
-    
 
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
