@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文字移动</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        #container {
+            width: 1120px;
+            margin: 20px auto;
+            border: 10px solid #e7eff7;
+            /*padding: 10px;*/
+            position: relative;
+        }
+        
+        .wrap {
+            border: 10px solid #ccc;
+            padding: 10px;
+        }
+        
+        .fl {
+            float: left;
+        }
+        
+        .left,
+        .right {
+            width: 460px;
+            height: 300px;
+            background: red;
+            /*overflow: hidden;*/
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 100%;
+            resize: none;
+            outline: none;
+            padding: 0;
+            font-size: 16px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        
+        .center {
+            width: 160px;
+            height: 100px;
+            text-align: center;
+        }
+        
+        #btn {
+            width: 140px;
+            height: 50px;
+            border: 0;
+            background: #f76300;
+            color: #ffffff;
+            font-size: 18px;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        
+        #btn:hover {
+            background: #c63908;
+            transition: all 0.5s;
+        }
+        
+        #load {
+            margin: 0 auto;
+            padding: 0;
+            width: 120px;
+            opacity: 0;
+            transition: all 1s;
+        }
+        
+        #load li {
+            margin: 0;
+            list-style: none;
+            float: left;
+            width: 10px;
+            height: 10px;
+            background: yellow;
+            margin-right: 5px;
+        }
+        
+        #inp {
+            background: #efefd6;
+        }
+        
+        #receive {
+            background: #00def7;
+        }
+        
+        #load .run {
+            background: red;
+        }
+        
+        #change {
+            position: absolute;
+            bottom: -260px;
+            height: 200px;
+            width: 1100px;
+            padding: 10px;
+            border: 10px solid #e7eff7;
+            left: -10px;
+            overflow: auto;
+        }
+        
+        .ch {
+            color: #ffffff;
+            height: 25px;
+            width: 25px;
+            line-height: 25px;
+            margin-bottom: 5px;
+            float: left;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="wrap">
+            <div class="left fl">
+                <textarea name="" id="inp">春天来了，基于它有自然催生的功能，这个世界首先添加的就是象征生命的色彩。当你置身于大自然，亲密接触到渐欲抽新的绿芽，还有含苞待放的小花儿……欣赏这些崭新生命的自我律动时，内心也就越发能感受到春天的伟大。 尤其是过罢雨水，到了惊蛰，那些蛰伏了整个冬天的虫、鸟、兽，伴随觉醒的春雷来到人间。大地不知在何时，已经脱掉了那件黑白相间的棉袍，穿起令人耳目一新的翠色衣衫。就算你不曾留意，眼中俨然多了些许青黄的颜色。就算你不曾在意，耳朵里陡然听见一些唧唧喳喳的声音，你想捂都捂不住，它们几乎是同春天一起归来。</textarea>
+            </div>
+            <div class="center fl">
+                <input type="button" id="btn" value="转移文字">
+                <p id="num"><span>0</span>/<span>0</span></p>
+                <ul id="load">
+                    <li class="run"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="right fl">
+                <textarea name="" id="receive" disabled></textarea>
+            </div>
+            <div style="clear: both;"></div>
+            <div id="change">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            var oInp = document.getElementById('inp');
+            var oNum = document.getElementById('num')
+            var oBtn = document.getElementById('btn');
+            var oReceive = document.getElementById('receive');
+            var oLoad = document.getElementById('load');
+            var aLoadLi = oLoad.getElementsByTagName('li');
+            var oChange = document.getElementById('change');
+            var timer = null;
+            var iRun = 0;
+            var aColor = ["#d22321", "#f20d02", "#928271", "#018189", "#671719", "#381092", "#821329", "#478209", "#f09021"]
+                // var num = 0;
+            oBtn.onclick = function() {
+                num = 0;
+                var _this = this;
+
+                var len = oInp.value.length;
+                if (len == 0) return;
+                oReceive.value = "";
+                oChange.innerHTML = '';
+                oNum.getElementsByTagName("span")[1].innerText = len;
+                var val = oInp.value;
+                var cuton = val.split('');
+                this.value = "文字转移中···"
+                this.style.opacity = 0.3;
+                this.disabled = true;
+                oLoad.style.opacity = 1;
+                timer = setInterval(function() {
+
+                    for (var i = 0; i < aLoadLi.length; i++) {
+                        aLoadLi[i].className = "";
+                    }
+                    iRun %= aLoadLi.length;
+                    aLoadLi[iRun].className = "run";
+                    var sB = cuton.shift()
+                    oInp.value = cuton.join('');
+                    // oChange.innerHTML += "<span class='ch' style=background:" + aColor[num % aColor.length] + ">" + sB + "</span>"
+                    oChange.innerHTML += "<span class='ch' style=background:" + aColor[Math.floor(Math.random() * aColor.length)] + ">" + sB + "</span>"
+                    oReceive.value += sB;
+                    len = oInp.value.length;
+                    oNum.getElementsByTagName("span")[0].innerText = len;
+
+                    if (len == 0) {
+                        _this.value = "转移文字"
+                        _this.style.opacity = 1;
+                        _this.disabled = false;
+                        oLoad.style.opacity = 0;
+                        clearInterval(timer)
+                    }
+                    // num++;
+                    iRun++;
+                }, 80)
+            }
+        }
+    </script>
+</body>
+
+</html>

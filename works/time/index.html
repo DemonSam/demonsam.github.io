@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            float: left;
+            position: relative;
+            list-style: none;
+        }
+        
+        img {
+            width: 80px;
+            vertical-align: top;
+        }
+        
+        #bu {
+            width: 640px;
+            height: 112px;
+            margin: 0 auto;
+            margin-top: 150px;
+        }
+        
+        .item {
+            float: left;
+            width: 80px;
+            height: 225px;
+            top: 0;
+        }
+        
+        .time {
+            width: 160px;
+            height: 112px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="bu">
+        <li class="time">
+            <div class="item">
+                <img src="img/0.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/0.jpg" alt="">
+            </div>
+        </li>
+        <li>
+            <div><img src="img/colon.jpg" alt=""></div>
+        </li>
+        <li class="time">
+            <div class="item">
+                <img src="img/0.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/0.jpg" alt="">
+            </div>
+        </li>
+        <li>
+            <div><img src="img/colon.jpg" alt=""></div>
+        </li>
+        <li class="time">
+            <div class="item">
+                <img src="img/0.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/0.jpg" alt="">
+            </div>
+        </li>
+    </ul>
+    <script>
+        window.onload = function() {
+                var oBu = document.getElementById("bu");
+                var aTime = oBu.getElementsByClassName('time');
+                // sH sM sS 保存时分秒 用于比较
+                var sH = "00";
+                var sM = "00";
+                var sS = "00";
+                //布局转换
+                for (var i = 0; i < aTime.length; i++) {
+                    var aItem = aTime[i].getElementsByClassName("item");
+                    aItem[0].style.left = 0;
+                    aItem[1].style.left = aItem[1].offsetLeft + 'px';
+                }
+                for (var i = 0; i < aTime.length; i++) {
+                    var aItem = aTime[i].getElementsByClassName("item");
+                    aItem[0].style.position = "absolute";
+                    aItem[1].style.position = "absolute";
+                }
+                //上来执行
+                time()
+                setInterval(time, 1000)
+
+                function time() {
+
+                    var nowTime = new Date();
+                    var sHours = change(nowTime.getHours());
+                    var sMinutes = change(nowTime.getMinutes());
+                    var sSeconds = change(nowTime.getSeconds());
+                    var v = null;
+                    //判断【时】位置是否正确有变化
+                    if (sHours != sH) {
+                        if (sHours.charAt(0) != sH.charAt(0)) {
+                            v = spl(0, 0)
+                            goin(v.parent, v.self, parseInt(sHours.charAt(0)))
+                        }
+                        if (sHours.charAt(1) != sH.charAt(1)) {
+                            v = spl(0, 1)
+                            goin(v.parent, v.self, parseInt(sHours.charAt(1)))
+                        }
+                    }
+                    //判断【分】位置是否正确有变化
+                    if (sMinutes != sM) {
+                        if (sMinutes.charAt(0) != sM.charAt(0)) {
+                            v = spl(1, 0)
+                            goin(v.parent, v.self, parseInt(sMinutes.charAt(0)))
+                        }
+                        if (sMinutes.charAt(1) != sM.charAt(1)) {
+                            v = spl(1, 1)
+                            goin(v.parent, v.self, parseInt(sMinutes.charAt(1)))
+                        }
+                    }
+                    //判断【秒】位置是否正确有变化
+                    if (sSeconds != sS) {
+                        if (sSeconds.charAt(0) != sS.charAt(0)) {
+                            v = spl(2, 0)
+                            goin(v.parent, v.self, parseInt(sSeconds.charAt(0)))
+                        }
+                        if (sSeconds.charAt(1) != sS.charAt(1)) {
+                            v = spl(2, 1)
+                            goin(v.parent, v.self, parseInt(sSeconds.charAt(1)))
+                        }
+                    }
+
+                    sH = sHours;
+                    sM = sMinutes;
+                    sS = sSeconds;
+
+                }
+                //获取当前父级，和当前的img标签
+                function spl(t, num) {
+                    return {
+                        parent: aTime[t].getElementsByClassName("item")[num],
+                        self: aTime[t].getElementsByClassName("item")[num].getElementsByTagName("img")[0]
+                    }
+                }
+            }
+            //切换动画效果
+        function goin(oParent, oSelf, iNext) {
+            var oNext = document.createElement("img");
+            oNext.src = "img/" + iNext + ".jpg";
+            oNext.setAttribute("style", "position:absolute;left:" + oSelf.offsetLeft + "px;top:" + oSelf.offsetHeight + "px");
+            oParent.appendChild(oNext);
+            move(oParent, {
+                "top": -oSelf.offsetHeight
+            }, function() {
+                oParent.removeChild(oSelf);
+                // console.log(oParent.getElementsByTagName("img").length + "\n" + oParent.innerHTML)
+                if (oParent.getElementsByTagName("img").length > 1) {
+                    for (var i = 0; i < oParent.getElementsByTagName("img").length; i++) {
+                        if (oParent.getElementsByTagName("img")[i] == oNext) {
+                            continue;
+                        }
+                        oParent.removeChild(oParent.getElementsByTagName("img")[i]);
+                    }
+                }
+                oNext.style.top = 0;
+                oParent.style.top = 0;
+            })
+        }
+        //返回一个string类型
+        function change(num) {
+            return num < 10 ? "0" + num : "" + num
+        }
+
+        function move(obj, json, fn) {
+            if (!obj) {
+                return;
+            }
+            clearInterval(obj.timer);
+
+            obj.timer = setInterval(function() {
+                var bSwitch = true;
+                var iDirection = 0;
+                for (var attr in json) {
+                    //获取当前的值 （这里判断是否为opacity）
+                    if (attr == "opacity") {
+                        iDirection = getStyle(obj, attr) * 100;
+                    } else {
+                        iDirection = parseInt(getStyle(obj, attr));
+                    }
+                    //（最终位置- 当前位置 ） /8 = 一个缓冲速度
+                    var iSpeed = (json[attr] - iDirection) / 8;
+                    //小数点像素问题
+                    iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+                    //判断是否所有元素到达目标点
+                    if (iDirection != json[attr]) {
+                        bSwitch = false;
+                    }
+                    //判断是否为opacity然后赋值
+                    if (attr == "opacity") {
+                        obj.style.filter = 'alpha(opacity:' + (iDirection + iSpeed) + ')';
+                        obj.style.opacity = (iDirection + iSpeed) / 100;
+                    } else {
+                        obj.style[attr] = iDirection + iSpeed + 'px';
+                    }
+
+                }
+                //所有动画完成 清除定时器 和 执行回调函数
+                if (bSwitch) {
+                    clearInterval(obj.timer);
+                    if (fn) {
+                        fn();
+                    }
+                }
+            }, 30)
+        }
+        //获取计算后的值
+        function getStyle(obj, attr) {
+            if (obj.currentStyle) {
+                return obj.currentStyle[attr];
+            } else {
+                return getComputedStyle(obj, false)[attr];
+            }
+        }
+    </script>
+</body>
+
+</html>

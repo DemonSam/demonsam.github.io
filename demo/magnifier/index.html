@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #magnifier {
+            margin: 10px 0 0 10px;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        #magnifier:after {
+            content: "";
+            height: 0;
+            clear: both;
+            overflow: hidden;
+            display: block;
+        }
+        
+        .small {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        
+        .small .float_layer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background: #eee;
+            opacity: 0.3;
+            display: none;
+        }
+        
+        .small .mark {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+        }
+        
+        .big {
+            position: absolute;
+            width: 215px;
+            height: 215px;
+            left: 215px;
+            overflow: hidden;
+            top: -1px;
+            border: 2px solid #999;
+            display: none;
+        }
+        
+        .big img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="magnifier">
+        <div class="small">
+            <span class="float_layer"></span>
+            <span class="mark"></span>
+            <img src="images/small.jpg" alt="">
+        </div>
+        <div class="big">
+            <img src="images/big-2.jpg" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        var oMagnifier = document.getElementById('magnifier');
+        var oSmall = getByClass(oMagnifier, 'small')[0];
+        var oFloatLayer = getByClass(oSmall, 'float_layer')[0];
+        var oMark = getByClass(oSmall, 'mark')[0];
+        var oBig = getByClass(oMagnifier, 'big')[0];
+        var oBigImg = oBig.getElementsByTagName('img')[0];
+        oMark.onmouseout = function() {
+            oFloatLayer.style.display = 'none';
+            oBig.style.display = 'none';
+        }
+        oMark.onmouseover = function() {
+            oFloatLayer.style.display = 'block';
+            oBig.style.display = 'block';
+        }
+
+        oMark.onmousemove = function(ev) {
+            var oEvent = ev || event;
+            var l = oEvent.clientX - oMagnifier.offsetLeft - oMark.offsetLeft - (oFloatLayer.offsetWidth / 2);
+            var t = oEvent.clientY - oMagnifier.offsetTop - oMark.offsetTop - (oFloatLayer.offsetHeight / 2);
+            if (l < 0) {
+                l = 0;
+            } else if (l > oMark.offsetWidth - oFloatLayer.offsetWidth) {
+                l = oMark.offsetWidth - oFloatLayer.offsetWidth;
+            }
+            if (t < 0) {
+                t = 0;
+            } else if (t > oMark.offsetHeight - oFloatLayer.offsetHeight) {
+                t = oMark.offsetHeight - oFloatLayer.offsetHeight;
+            }
+
+            oFloatLayer.style.left = l + 'px';
+            oFloatLayer.style.top = t + 'px';
+
+            var scaleL = l / (oMark.offsetWidth - oFloatLayer.offsetWidth);
+            var scaleT = t / (oMark.offsetHeight - oFloatLayer.offsetHeight);
+            oBigImg.style.left = -scaleL * (oBigImg.width - oBig.offsetWidth) + 'px'
+            oBigImg.style.top = -scaleT * (oBigImg.height - oBig.offsetHeight) + 'px'
+
+        }
+
+    }
+
+    function getByClass(oParent, sClass) {
+        var aElements = oParent.getElementsByTagName('*');
+        var reg = new RegExp('\\b' + sClass + '\\b', 'i');
+        var aResult = [];
+        for (var i = 0; i < aElements.length; i++) {
+            if (reg.test(aElements[i].className)) {
+                aResult.push(aElements[i]);
+            }
+        }
+        return aResult;
+    }
+</script>
+
+</html>

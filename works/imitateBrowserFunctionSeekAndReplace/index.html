@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模拟浏览器（查找、替换）</title>
+    <style>
+        body {
+            margin: 0;
+            background: #efefe7;
+        }
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        #container {
+            position: relative;
+            width: 520px;
+            margin: 50px auto;
+        }
+        
+        .con {
+            width: 500px;
+            background: #ffffff;
+            padding: 15px 10px;
+        }
+        
+        .con span {
+            background: yellow;
+        }
+        
+        .btn {
+            width: 80px;
+            /*background: red;*/
+            position: absolute;
+            right: -110px;
+            top: 0;
+        }
+        
+        .btn input {
+            width: 80px;
+            border: 0;
+            height: 30px;
+            margin-bottom: 5px;
+            color: #ffffff;
+            cursor: pointer;
+            background: #999999;
+            outline: none;
+        }
+        
+        .btnlist {
+            display: none;
+        }
+        
+        .btnlist.active {
+            display: block;
+        }
+        
+        .btnlist input {
+            background: #666666;
+        }
+        
+        .btnlist input:hover {
+            background: #e73100;
+        }
+        
+        #function {
+            margin: 20px auto 0 auto;
+            border: 10px solid #e71063;
+            padding: 10px;
+            background: #e7e7b5;
+            display: none;
+        }
+        
+        #function.active {
+            display: block;
+        }
+        
+        .close {
+            display: block;
+            text-align: right;
+            line-height: 20px;
+        }
+        
+        .close .closeBtn {
+            color: #000000;
+            font-size: 30px;
+        }
+        
+        .tabControl:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        
+        .tabControl {
+            border-bottom: 2px solid #e73100;
+            margin-bottom: 10px;
+        }
+        
+        .tabControl li {
+            float: left;
+        }
+        
+        .tabControl li a {
+            display: block;
+            width: 80px;
+            height: 30px;
+            line-height: 35px;
+            color: #000000;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .tabControl li.active a {
+            background: #e73100;
+            color: #ffffff;
+        }
+        
+        .tab {
+            padding: 10px 0;
+        }
+        
+        .tab li {
+            display: none;
+        }
+        
+        .tab li.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="con">
+            春天来了，基于它有自然催生的功能，这个世界首先添加的就是象征生命的色彩。当你置身于大自然，亲密接触到渐欲抽新的绿芽，还有含苞待放的小花儿……欣赏这些崭新生命的自我律动时，内心也就越发能感受到春天的伟大。 尤其是过罢雨水，到了惊蛰，那些蛰伏了整个冬天的虫、鸟、兽，伴随觉醒的春雷来到人间。大地不知在何时，已经脱掉了那件黑白相间的棉袍，穿起令人耳目一新的翠色衣衫。就算你不曾留意，眼中俨然多了些许青黄的颜色。就算你不曾在意，耳朵里陡然听见一些唧唧喳喳的声音，你想捂都捂不住，它们几乎是同春天一起归来。
+        </div>
+        <div class="btn">
+            <input type="button" id="btn" value="展开">
+            <ul class="btnlist">
+                <li><input id="lookup" type="button" value="查找"></li>
+                <li><input id="replace" type="button" value="替换"></li>
+            </ul>
+        </div>
+        <div id="function">
+            <div class="close">
+                <a class="closeBtn" href="javascript:;">×</a>
+            </div>
+
+            <ul class="tabControl">
+                <li class="active"><a href="javascript:;">查找</a></li>
+                <li><a href="javascript:;">替换</a></li>
+            </ul>
+            <ul class="tab">
+                <li class="active">
+                    <input type="text" id="inputCheck">
+                    <input type="button" value="查找" id="check">
+                </li>
+                <li>
+                    <input type="text" id="inputFindChange">
+                    <input type="text" id="inputChange">
+                    <input type="button" value="替换" id="change">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            var oCon = document.getElementsByClassName('con')[0];
+            var sSaveHtml = oCon.innerHTML;
+            var oBtn = getID('btn');
+            var oBtnList = document.getElementsByClassName('btnlist')[0];
+            var oLookup = getID('lookup');
+            var oReplace = getID('replace');
+            var oFunction = getID('function');
+            var oInputCheck = getID('inputCheck');
+            var oCheck = getID('check');
+            var oInputFindChange = getID('inputFindChange');
+            var oInputChange = getID('inputChange');
+            var oChange = getID('change');
+            var oCloseBtn = document.getElementsByClassName('closeBtn')[0];
+            var oTabControl = document.getElementsByClassName('tabControl')[0];
+            var aTabControlLi = oTabControl.getElementsByTagName('li');
+            var oTab = document.getElementsByClassName('tab')[0];
+            var aTabLi = oTab.getElementsByTagName('li');
+            var bBtn = true;
+
+            //查找按钮
+            oLookup.onclick = function() {
+                this.index = 0;
+                tagChange(this.index)
+                oBtnList.className = 'btnlist';
+                oFunction.className = "active";
+                oBtn.value = '展开'
+                bBtn = !bBtn;
+            }
+
+            //替换按钮
+            oReplace.onclick = function() {
+                this.index = 1;
+                tagChange(this.index)
+                oBtnList.className = 'btnlist';
+                oFunction.className = "active";
+                oBtn.value = '展开';
+                bBtn = !bBtn;
+            }
+
+            //给tab加点击事件
+            for (var i = 0; i < aTabControlLi.length; i++) {
+                aTabControlLi[i].index = i;
+                aTabControlLi[i].onclick = function() {
+                    tagChange(this.index);
+                }
+            }
+
+            //点击查找按钮
+            oCheck.onclick = function() {
+                var sCheck = oInputCheck.value;
+                if (sCheck == "") {
+                    alert('请输入要查找的内容！')
+                    return;
+                }
+                if (oCon.innerHTML.indexOf(sCheck) === -1) {
+                    alert("对不起，没有找到您输入的：【" + sCheck + "】");
+                    return;
+                }
+                oCon.innerHTML = sSaveHtml;
+                var aFindCheck = oCon.innerHTML.split(sCheck);
+                oCon.innerHTML = aFindCheck.join("<span>" + sCheck + "</span>")
+            }
+
+            //点击替换内容按钮
+            oChange.onclick = function() {
+                var sFind = oInputFindChange.value;
+                var sChange = oInputChange.value;
+                var bJudge = true;
+                oCon.innerHTML = sSaveHtml;
+                if (sFind == "") {
+                    alert("请输入要查找的内容！");
+                    return;
+                }
+                if (oCon.innerHTML.indexOf(sFind) === -1) {
+                    alert("对不起，没有找到替换内容：【" + sFind + "】");
+                    return;
+                }
+                if (sFind != "" && sChange == "") {
+                    bJudge = confirm("确定要删除【" + sFind + "】？")
+                }
+                if (bJudge) {
+                    var aFindChange = oCon.innerHTML.split(sFind);
+                    sSaveHtml = aFindChange.join(sChange);
+                    oCon.innerHTML = aFindChange.join("<span>" + sChange + "</span>");
+                }
+            }
+
+            //展开按钮
+            oBtn.onclick = function() {
+                if (bBtn) {
+                    this.value = "收缩";
+                    oBtnList.className = 'btnlist active';
+                } else {
+                    this.value = "展开";
+                    oBtnList.className = 'btnlist';
+                }
+                bBtn = !bBtn;
+            }
+
+            oCloseBtn.onclick = function() {
+                oFunction.className = "";
+            }
+
+            //tab切换方法
+            function tagChange(index) {
+                for (var j = 0; j < aTabControlLi.length; j++) {
+                    aTabLi[j].className = "";
+                    aTabControlLi[j].className = "";
+                }
+                aTabLi[index].className = 'active';
+                aTabControlLi[index].className = 'active';
+            }
+
+            function getID(id) {
+                return document.getElementById(id)
+            }
+        }
+    </script>
+</body>
+
+</html>

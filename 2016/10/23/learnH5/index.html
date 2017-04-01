@@ -14,16 +14,16 @@
 <meta name="author" content="DemonSam" />
 
 
-<meta name="description" content="学习HTML5，移动端开发第一篇">
+<meta name="description" content="HTML5，移动端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习HTML5/移动开发">
+<meta property="og:title" content="HTML5/移动开发（一）">
 <meta property="og:url" content="http://www.toofar.top/2016/10/23/learnH5/index.html">
 <meta property="og:site_name" content="tooFar">
-<meta property="og:description" content="学习HTML5，移动端开发第一篇">
-<meta property="og:updated_time" content="2016-10-23T06:09:12.419Z">
+<meta property="og:description" content="HTML5，移动端开发">
+<meta property="og:updated_time" content="2017-01-05T13:14:13.268Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习HTML5/移动开发">
-<meta name="twitter:description" content="学习HTML5，移动端开发第一篇">
+<meta name="twitter:title" content="HTML5/移动开发（一）">
+<meta name="twitter:description" content="HTML5，移动端开发">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -45,7 +45,7 @@
 
 
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/red/pace-theme-minimal.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/orange/pace-theme-flash.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -55,7 +55,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>学习HTML5/移动开发 | tooFar</title>
+<title>HTML5/移动开发（一） | tooFar</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -71,7 +71,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: true
+        search: false
     }
 </script>
 
@@ -104,13 +104,6 @@
 
         
 
-        
-            <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
-            <i class="fa fa-times" onclick="resetSearch()"></i>
-            </form>
-            <div id="local-search-result"></div>
-            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -159,11 +152,7 @@
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
-                            <li><a href="/tags/">标签云</a></li>
-                        
-                            <li><a href="/about/">关于我</a></li>
-                        
-                            <li><a href="/works/">demo集合</a></li>
+                            <li><a href="/works/">Works DEMO</a></li>
                         
                         </ul>
                     </nav>
@@ -181,7 +170,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端开发/">移动端开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闲谈/">闲谈</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端开发/">移动端开发</a></li></ul>
                     </div>
                 </section>
                 
@@ -222,11 +211,7 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
-                    <li><a href="/tags/">标签云</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
-                
-                    <li><a href="/works/">demo集合</a></li>
+                    <li><a href="/works/">Works DEMO</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -263,7 +248,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      学习HTML5/移动开发
+      HTML5/移动开发（一）
     </h1>
   
 
@@ -284,7 +269,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>学习HTML5，移动端开发第一篇<br><a id="more"></a></p>
+        <p>HTML5，移动端开发<br><a id="more"></a></p>
 <h2 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h2><h3 id="HTML5标签发信息"><a href="#HTML5标签发信息" class="headerlink" title="HTML5标签发信息"></a>HTML5标签发信息</h3><p><small>Android和写法不同<small><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Android写法</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"sms:号码?body=发送内容"</span>&gt;</span></div><div class="line">IOS写法</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"sms:号码&amp;body=发送内容"</span>&gt;</span></div></pre></td></tr></table></figure></small></small></p>
 <hr>
 <h3 id="去掉-a，input-在移动端浏览器中的默认样式IOS"><a href="#去掉-a，input-在移动端浏览器中的默认样式IOS" class="headerlink" title="去掉 a，input 在移动端浏览器中的默认样式IOS"></a>去掉 a，input 在移动端浏览器中的默认样式IOS</h3><ol>
@@ -312,12 +297,12 @@
 
     <nav id="article-nav">
         
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/10/06/firsttime/">
-                    清风淡水
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/02/06/json/">
+                    JSON
                 </a>
             </div>
+        
         
     </nav>
 
@@ -363,7 +348,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"学习HTML5/移动开发　| tooFar　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"HTML5/移动开发（一）　| tooFar　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -397,19 +382,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/02/06/json/" title="上一篇: JSON">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/10/06/firsttime/" title="下一篇: 清风淡水">
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/23/learnH5/">学习HTML5/移动开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/firsttime/">清风淡水</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/06/json/">JSON</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/23/learnH5/">HTML5/移动开发（一）</a></li></ul>
 
 
 
@@ -423,7 +408,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016 DemonSam
+                2016-2017 DemonSam
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
@@ -453,22 +438,6 @@
     </div>
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 6;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
 
 
 
